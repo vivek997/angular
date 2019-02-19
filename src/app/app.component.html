@@ -1,0 +1,39 @@
+
+<div class="row">
+  <div class="box">
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedUser.username" #username="ngModel" placeholder="Name" required>
+      <div *ngIf="username.invalid && (username.dirty || username.touched)">
+          <div *ngIf="username.errors.required" class="validation_error">
+              Name is required.
+            </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedUser.dob" [bsConfig]="datePickerConfig" onkeydown="return false" placeholder="Age" class="bsDatepicker" bsDatepicker>
+      
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedUser.email" #email="ngModel" placeholder="Email" required email/>
+      <div *ngIf="email.invalid && (email.dirty || email.touched)">
+          <div *ngIf="email.errors.required" class="validation_error">
+              Email is required.
+          </div>
+          <div *ngIf="email.errors.email" class="validation_error">
+            Email must be a valid email address.
+          </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedUser.phone_no" placeholder="Phone no"/>
+    </div>
+
+    <button (click)="createUser()"> SUBMIT </button>
+
+  </div>
+</div>
+

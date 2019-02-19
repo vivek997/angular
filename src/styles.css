@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body {
+    background-color: #17202A;
+margin: 0;
+font-family: 'Roboto', sans-serif;
+}
+.toast-success {
+    background-color: #51a351;
+  }
+
+.toast-error {
+    background-color: darkred;
+}
